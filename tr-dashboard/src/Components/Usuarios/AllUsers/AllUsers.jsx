@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./AllUsers.css";
 import UserCard from "../UserCard/UserCard";
-import Request from "../../../Request";
+import Request from "../../../utils/Request";
 
 function AllUsers(totalUser) {
   const limitPage = Math.floor(totalUser.totalUser / 4)
@@ -34,7 +34,8 @@ function AllUsers(totalUser) {
   useEffect(()=>{
     pageUsers();
   },[page])
-
+  
+  console.log(limitPage);
 
   return (
     <>
@@ -61,7 +62,7 @@ function AllUsers(totalUser) {
               <FontAwesomeIcon className="arrow-icon" icon={faArrowLeftLong} />
             </div> 
           <span className="page-container">{page}</span>
-          <div className="button-next" onClick={()=> page !== limitPage ?setPage(page + 1):setPage(page + 0)}>
+          <div className="button-next" onClick={()=> page < limitPage ?setPage(page + 1):setPage(page + 0)}>
             <FontAwesomeIcon className="arrow-icon" icon={faArrowRightLong} />
           </div>
         </div>
