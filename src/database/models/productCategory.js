@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes)=>{
         }
      }, 
         {
-        tableName: "productCategory",
+        tableName: "ProductCategory",
         timestamps: false
     });
 
