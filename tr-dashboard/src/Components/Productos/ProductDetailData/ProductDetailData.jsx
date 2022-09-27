@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Formatter from '../../../utils/Formatter.js';
 import "./ProductDetailData.css";
+import Request from "../../../utils/Request.js";
 
 function ProductDetailData() {
     let idProduct = useParams();
@@ -9,7 +10,7 @@ function ProductDetailData() {
 
     const getItemDetail = async()=>{
         try {
-            const result = await fetch(`http://localhost:3001/api/product/${idProduct.id}`)
+            const result = await fetch(`${Request}/api/product/${idProduct.id}`)
             const productJson = await result.json();
             setProduct(productJson);
         } catch (error) {

@@ -7,13 +7,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./AllUsers.css";
 import UserCard from "../UserCard/UserCard";
+import Request from "../../../Request";
 
 function AllUsers(totalUser) {
   const limitPage = Math.floor(totalUser.totalUser / 4)
   const [userPage, setUserPage] = useState([]);
   const [page, setPage] = useState(0);
 
-  let url = `http://localhost:3001/api/users?page=${page}`;
+  let url = `${Request}/api/users?page=${page}`;
 
   const pageUsers = async () => {
     try {

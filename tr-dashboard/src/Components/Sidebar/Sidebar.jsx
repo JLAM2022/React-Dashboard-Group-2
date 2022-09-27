@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUser, faWineBottle, faWineGlass } from "@fortawesome/free-solid-svg-icons";
 import Img from "../../Assets/images/admin@admin.com_1657413736084.png";
+import Request from "../../utils/Request";
 
 function Sidebar() {
     const [usuarios, setUsuarios] = useState([]);
     
     useEffect(() => {
-        fetch(`http://localhost:3001/api/users/2`)
+        fetch(`${Request}/api/users/2`)
 		.then(function(response) {
 			return response.json();
 		})

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'; 
 import "./CategoriesCards.css";
+import Request from '../../../utils/Request';
 
 const CategoriesCards=()=>{
     const [categories, setCategories] = useState([]);
 
     const getCategories = async()=>{
         try {
-            const result = await fetch("http://localhost:3001/api/product")
+            const result = await fetch(`${Request}/api/product`)
             const categoriesJson = await result.json();
             setCategories(categoriesJson.countByCategory);
         } catch (error) {

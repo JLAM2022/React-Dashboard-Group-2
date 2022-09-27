@@ -4,6 +4,7 @@ import AllUsers from "../Components/Usuarios/AllUsers/AllUsers";
 import LastUserDetail from "../Components/Usuarios/LastUserDetail/LastUserDetail";
 import UserStadistics from "../Components/Usuarios/UserStadistics/UserStadistics";
 import Bienvenida from "../Components/Bienvenida/Bienvenida";
+import Request from "../utils/Request";
 
 function Usuarios() {
   const [lastCreated, setLastCreated] = useState({});
@@ -11,7 +12,7 @@ function Usuarios() {
 
   const getUsers = async () => {
     try {
-      const result = await fetch(`http://localhost:3001/api/users`);
+      const result = await fetch(`${Request}/api/users`);
       const usersJson = await result.json();
       setUsers(usersJson);
       setLastCreated(usersJson.lastUser);

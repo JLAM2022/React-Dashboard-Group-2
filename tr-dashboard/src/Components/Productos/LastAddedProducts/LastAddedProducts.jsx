@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'; 
 import Formatter from '../../../utils/Formatter.js';
 import "./LastAddedProducts.css";
+import Request from '../../../utils/Request.js';
 
 const LastAddedProducts=()=>{
     const [products, setProducts] = useState([]);
 
     const getLastAdded = async()=>{
         try {
-            const result = await fetch("http://localhost:3001/api/last-added")
+            const result = await fetch(`${Request}/api/last-added`)
             const productsJson = await result.json();
             setProducts(productsJson);
         } catch (error) {

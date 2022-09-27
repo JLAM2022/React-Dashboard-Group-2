@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import {faUserGroup} from "@fortawesome/free-solid-svg-icons";
 import OneCard from "../../../utils/OneCard/OneCard";
+import Request from "../../../utils/Request";
 
 function CartTotalUsers() {
     const [usuarios, setUsuarios] = useState(undefined);
 
     useEffect(() => {
-        fetch(`http://localhost:3001/api/users/`)
+        fetch(`${Request}/api/users/`)
             .then(function (response) {
                 return response.json();
             })

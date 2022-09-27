@@ -1,8 +1,9 @@
 import {React} from 'react'
 import './UserCard.css'
+import Request from '../../../utils/Request'
 
 function UserCard({id, firsName, lastName, email, fechaRegistro, imgPath, detailLink}) {  
-    const pathPrefix = 'http://localhost:3001/img/profileImages/'
+    const pathPrefix = `${Request}/img/profileImages/`
 
   return (
     <>

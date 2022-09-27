@@ -1,12 +1,3 @@
-const Get = async (url) => {
-    try{
-        const response = await fetch(url);
-        const res = await response.json();
-        return res;
+const Request = 'https://grupo2jlam-production-8382.up.railway.app';
 
-    }catch(error){
-        return error;
-    }
-} 
-
-export default Get;
+export default Request;
